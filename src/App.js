@@ -1,42 +1,28 @@
-import React, { Component } from 'react'
-import './App.css'
-
-import {Switch, Route} from 'react-router-dom'
-
-import Nav from './components/Nav/Nav'
+import React, {Component} from 'react'
+import {Route} from 'react-router-dom'
 
 class App extends Component {
+  constructor() {
+    super()
+
+  }
+
   render() {
     return (
-       <div className="App">
-         <Nav />
-         <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/shop" component={Shop} />
-            <Route path="/shop/:productId" component={Shop} />
-            <Route path="/cart" component={Cart} />
-         </Switch>
+      <div>
+        <h1>App</h1>
+        <Route path="/routing" component={Home}/>
+
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
 
-
-function Home () {
-   return (
-      <h1>Home</h1>
-   )
-}
-
-function Shop () {
-   return (
-      <h1>Shop</h1>
-   )
-}
-function Cart () {
-   return (
-      <h1>Cart</h1>
-   )
+function Home (props) {
+  console.log(props);
+  return (
+    <h1>Home</h1>
+  )
 }

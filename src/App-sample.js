@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 
-import {Switch, Route} from 'react-router-dom'
+import {Link, Switch, Route} from 'react-router-dom'
 
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
          <Switch>
                {/*Switch makes sure we only match one route at a time*/}
             <Route exact path="/" component={Home} />
-            <Route path="/shop" component={Shop} />
+            <Route exact path="/shop" component={Shop} />
             <Route path="/shop/:productId" component={Home} />
                {/*This route takes a parameter of product id*/}
             <Route path="/cart" component={Cart} />
